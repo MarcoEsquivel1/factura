@@ -18,8 +18,9 @@ public class DetalleService {
     @Autowired
     DetalleRepository detalleRepository;
 
-    public List<Detalle> getAll(){
-        return detalleRepository.findAll();
+    public List<Detalle> getAll(Integer id){
+        List<Detalle> detalleList = facturaRepository.findById(id).get().getDetalleList();
+        return detalleList;
     }
 
     public Detalle post(Detalle detalle){
@@ -27,10 +28,6 @@ public class DetalleService {
         return detalleRepository.save(detalle);
     }
 
-    public Optional<Detalle> getById(Integer id){
-        Optional<Detalle> detalle = detalleRepository.findById(id);
-        return detalle;
-    }
 
     public Optional<Detalle> update(Integer id, Detalle detalle){
         Optional<Detalle> detalleInDB = detalleRepository.findById(id);

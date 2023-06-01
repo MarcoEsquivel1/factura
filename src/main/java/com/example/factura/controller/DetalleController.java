@@ -14,19 +14,14 @@ public class DetalleController {
     @Autowired
     DetalleService detalleService;
 
-    @GetMapping
-    public Object getAll(){
-        return detalleService.getAll();
+    @GetMapping("/{id}")
+    public Object getAll(@PathVariable("id") Integer id){
+        return detalleService.getAll(id);
     }
 
     @PostMapping(consumes = {"application/json", "application/x-www-form-urlencoded"})
     public Object post(@RequestBody Detalle detalle){
         return detalleService.post(detalle);
-    }
-
-    @GetMapping("/{id}")
-    public Optional<Detalle> getById(@PathVariable("id") Integer id) {
-        return detalleService.getById(id);
     }
 
     @PutMapping("/{id}")
