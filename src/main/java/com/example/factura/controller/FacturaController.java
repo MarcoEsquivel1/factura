@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/facturas")
 public class FacturaController {
     @Autowired
@@ -19,7 +20,7 @@ public class FacturaController {
         return facturaService.getAll();
     }
     @PostMapping(consumes = {"application/json", "application/x-www-form-urlencoded"})
-    public Factura post(Factura factura){
+    public Factura post(@RequestBody Factura factura){
         return facturaService.post(factura);
     }
 

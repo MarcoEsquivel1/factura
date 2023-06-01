@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+import static java.lang.System.out;
+
 @Service("facturaService")
 public class FacturaService {
     @Autowired
@@ -33,6 +35,7 @@ public class FacturaService {
     }
 
     public Optional<Factura> update(Integer id, Factura factura){
+        out.println(factura.getFecha());
         Optional<Factura> facturaInDB = facturaRepository.findById(id);
 
         //verify in factura if the attribute is null, if it is null, it will not be updated

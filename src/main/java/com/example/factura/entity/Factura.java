@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class Factura {
     @Column(name = "fecha")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
-    private Date fecha;
+    private LocalDate fecha;
     @Column(name = "total")
     private Double total;
     @OneToMany(mappedBy = "factutaId")
