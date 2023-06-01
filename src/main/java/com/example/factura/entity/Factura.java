@@ -31,6 +31,6 @@ public class Factura {
     private LocalDate fecha;
     @Column(name = "total")
     private Double total;
-    @OneToMany(mappedBy = "factutaId")
+    @OneToMany(mappedBy = "facturaid")
     private List<Detalle> detalleList;
 }

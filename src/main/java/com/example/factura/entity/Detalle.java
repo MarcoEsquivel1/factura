@@ -19,6 +19,6 @@ public class Detalle {
     private Integer cantidad;
     @Column(name = "subtotal")
     private Double subtotal;
-    @Column(name = "factura_id")
-    private Integer factutaId;
+    @Column(name = "facturaid")
+    private Integer facturaid;
 }
